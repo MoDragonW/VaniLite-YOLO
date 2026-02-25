@@ -1,0 +1,24 @@
+path: renshen # dataset root dir
+train: D:\数据集\药材数据集\参类数据集\images\train # train images (relative to 'path') 4 images
+val: D:\数据集\药材数据集\参类数据集\images\val # val images (relative to 'path') 4 images
+test: D:\数据集\药材数据集\参类数据集\images\test # test images (optional)
+
+
+names:
+  0: White Ginseng
+  1: radix glehniae
+  2: Salvia miltiorrhiza
+  3: Codonopsis pilosula
+  4: Korean ginseng
+  5: red ginseng root
+  6: Sophora flavescens
+  7: Changium smyrnioides
+  8: Nansha ginseng
+  9: ginseng
+  10: Panax notoginseng
+  11: Adenophora Root
+  12: dendrobe
+  13: radix pseudostellariae
+  14: Panax quinquefolius L
+  15: Scrophularia
+  16: bamboo

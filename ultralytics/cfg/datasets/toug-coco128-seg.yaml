@@ -1,0 +1,9 @@
+# YOLOv12 segmentation dataset config
+
+path: /workspace/autodl-tmp/yolo-segment-data
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: tongue

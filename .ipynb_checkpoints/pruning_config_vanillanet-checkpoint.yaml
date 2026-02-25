@@ -1,0 +1,80 @@
+# YOLOv12-Vanillanet 结构化剪枝配置文件
+# 基于 DepGraph (CVPR 2023) 方法
+
+# =====================================================
+# 剪枝配置
+# =====================================================
+pruning:
+  # 剪枝目标 (VanillaNet 已经很精简，使用较低的稀疏率)
+  sparsity: 0.25                    # 目标稀疏率 25%
+  round_to: 8                       # 通道数为 8 的倍数
+  global_pruning: true
+  iterative_steps: 1
+
+  # 稀疏化训练 (原模型训练500-700epoch，此处约10%)
+  sparse_training:
+    epochs: 60                      # 稀疏化训练轮数
+    lambda_sparse: 5.0e-5           # 使用较小的正则化强度
+    lambda_schedule: "warmup"       # 使用 warmup 策略，前 20% 不添加正则化
+    lr_scale: 0.1
+
+  # 微调恢复 (原模型训练500-700epoch，此处约20%)
+  finetune:
+    epochs: 120
+    lr_scale: 0.01
+
+  # 需要忽略的模块类型
+  ignored_modules:
+    - "Detect"
+    - "Segment"
+
+  # 特殊模块配置
+  special_modules:
+    vanillanetBlock:
+      # vanillanetBlock 包含分组卷积的 activation
+      handle_activation: true       # 需要特殊处理 activation 模块
+      deploy_after_prune: false     # 剪枝后不自动转换为 deploy 模式
+    activation:
+      # activation 使用 groups=dim 的分组卷积
+      sync_with_conv: true          # 与前置卷积同步剪枝
+
+# =====================================================
+# 通用训练配置
+# =====================================================
+training:
+  batch_size: 896                 # 4xL20 吃满显存
+  imgsz: 640
+  base_lr: 0.01
+  optimizer: "SGD"
+  momentum: 0.937
+  weight_decay: 5.0e-4
+  device: "0,1,2,3"               # 4张L20 GPU
+  workers: 16                     # 数据加载线程数
+
+# =====================================================
+# 导出配置
+# =====================================================
+export:
+  # ONNX 导出
+  onnx:
+    dynamic: true
+    simplify: true                  # 必须开启，清理剪枝遗留的无用节点
+    opset: 11
+
+  # TensorRT 导出
+  tensorrt:
+    half: true                      # FP16 推理
+    workspace: 4                    # GB
+
+# =====================================================
+# 推荐的剪枝流程
+# =====================================================
+#
+# 1. python prune_yolo12_vanillanet.py --mode analyze --model your_model.pt
+# 2. python prune_yolo12_vanillanet.py --mode sparse --model your_model.pt --epochs 60
+# 3. python prune_yolo12_vanillanet.py --mode prune --model runs/segment/sparse/weights/last.pt --sparsity 0.25
+# 4. python prune_yolo12_vanillanet.py --mode finetune --model runs/segment/pruned/weights/pruned_yolo.pt --epochs 120
+# 5. python prune_yolo12_vanillanet.py --mode deploy --model runs/segment/finetuned/weights/best.pt  # 可选
+#
+# 或者使用完整流程:
+# python prune_yolo12_vanillanet.py --mode full --model your_model.pt --data your_data.yaml
