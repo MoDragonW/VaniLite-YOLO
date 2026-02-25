@@ -33,8 +33,11 @@ REM 添加大文件跟踪
 %GIT_PATH% lfs track "*.rar"
 %GIT_PATH% lfs track "*.7z"
 
-REM 添加远程仓库
-%GIT_PATH% remote add origin https://github.com/MoDragonW/VaniLite-YOLO.git
+REM 使用令牌添加远程仓库
+set GITHUB_TOKEN=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
+set REMOTE_URL=https://%GITHUB_TOKEN%@github.com/MoDragonW/VaniLite-YOLO.git
+
+%GIT_PATH% remote add origin %REMOTE_URL%
 
 REM 添加所有文件
 %GIT_PATH% add .
@@ -46,9 +49,7 @@ REM 检查当前分支
 for /f "tokens=*" %%i in ('%GIT_PATH% branch --show-current') do set CURRENT_BRANCH=%%i
 
 if "%CURRENT_BRANCH%"=="" (
-    echo No current branch found, checking available branches...
-    %GIT_PATH% branch
-    echo Setting branch to main...
+    echo No current branch found, creating main branch...
     %GIT_PATH% checkout -b main
     set CURRENT_BRANCH=main
 )
@@ -65,25 +66,18 @@ if %errorlevel% neq 0 (
     %GIT_PATH% push -u origin %CURRENT_BRANCH% --force
 )
 
-REM 如果仍然失败，显示错误信息和解决方案
+REM 如果仍然失败，显示错误信息
 if %errorlevel% neq 0 (
-    echo Push failed again. Possible reasons:
-    echo 1. Remote repository does not exist
-    echo 2. Network connection issue
-    echo 3. Authentication failed
+    echo Push failed. Please check:
+    echo 1. GitHub repository exists
+    echo 2. Network connection is stable
+    echo 3. Token has correct permissions
     echo 
-    echo Please check:
-    echo - GitHub repository https://github.com/MoDragonW/VaniLite-YOLO exists
-    echo - You have internet connection
-    echo - You have permission to push to this repository
-    echo 
-    echo If repository doesn't exist, create it on GitHub first:
-    echo 1. Go to https://github.com/new
-    echo 2. Repository name: VaniLite-YOLO
-    echo 3. Visibility: Public or Private
-    echo 4. Do NOT initialize with README, .gitignore, or license
-    echo 5. Click "Create repository"
-    echo 6. Run this script again
+    echo Token: %GITHUB_TOKEN%
+    echo Remote URL: %REMOTE_URL%
+) else (
+    echo ✅ Successfully pushed to GitHub!
+    echo Repository: https://github.com/MoDragonW/VaniLite-YOLO
 )
 
 echo Done!
