@@ -1,0 +1,1581 @@
+{
+  "sparsity": 0.25,
+  "params_before": 1408931,
+  "params_after": 727486,
+  "compression_percent": 48.366101675667586,
+  "channel_changes": [
+    {
+      "name": "model.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 32
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 21
+      }
+    },
+    {
+      "name": "model.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 3,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 3,
+        "out": 21,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.1.conv1.0",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 21,
+        "out": 21,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.1.conv1.1",
+      "before": {
+        "type": "BN2d",
+        "nf": 32
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 21
+      }
+    },
+    {
+      "name": "model.1.conv2.0",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 21,
+        "out": 64,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 48
+      }
+    },
+    {
+      "name": "model.10.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 384,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 384,
+        "out": 48,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 128
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 125
+      }
+    },
+    {
+      "name": "model.10.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 128,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 104,
+        "out": 125,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.m.0.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 48,
+        "out": 32,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.m.0.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 32
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 30
+      }
+    },
+    {
+      "name": "model.10.m.0.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 48,
+        "out": 30,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.m.0.cv3.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 56
+      }
+    },
+    {
+      "name": "model.10.m.0.cv3.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 62,
+        "out": 56,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.m.0.m.0.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 32
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 29
+      }
+    },
+    {
+      "name": "model.10.m.0.m.0.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 29,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.m.0.m.0.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 29,
+        "out": 32,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.m.0.m.1.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 32
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 29
+      }
+    },
+    {
+      "name": "model.10.m.0.m.1.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 29,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.10.m.0.m.1.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 29,
+        "out": 32,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 32
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 18
+      }
+    },
+    {
+      "name": "model.13.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 192,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 189,
+        "out": 18,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 54
+      }
+    },
+    {
+      "name": "model.13.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 38,
+        "out": 54,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.m.0.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 16
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 15
+      }
+    },
+    {
+      "name": "model.13.m.0.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 16,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 18,
+        "out": 15,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.m.0.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 16
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 15
+      }
+    },
+    {
+      "name": "model.13.m.0.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 16,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 18,
+        "out": 15,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.m.0.cv3.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 32
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 20
+      }
+    },
+    {
+      "name": "model.13.m.0.cv3.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 30,
+        "out": 20,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.m.0.m.0.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 16
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 11
+      }
+    },
+    {
+      "name": "model.13.m.0.m.0.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 16,
+        "out": 16,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 15,
+        "out": 11,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.m.0.m.0.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 16
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 15
+      }
+    },
+    {
+      "name": "model.13.m.0.m.0.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 16,
+        "out": 16,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 11,
+        "out": 15,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.m.0.m.1.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 16
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 12
+      }
+    },
+    {
+      "name": "model.13.m.0.m.1.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 16,
+        "out": 16,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 15,
+        "out": 12,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.13.m.0.m.1.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 16
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 15
+      }
+    },
+    {
+      "name": "model.13.m.0.m.1.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 16,
+        "out": 16,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 12,
+        "out": 15,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.14.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 58
+      }
+    },
+    {
+      "name": "model.14.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 54,
+        "out": 58,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.16.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 62
+      }
+    },
+    {
+      "name": "model.16.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 192,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 183,
+        "out": 62,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.16.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 128
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 88
+      }
+    },
+    {
+      "name": "model.16.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 128,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 115,
+        "out": 88,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.16.m.0.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 62,
+        "out": 32,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.16.m.0.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 32
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 17
+      }
+    },
+    {
+      "name": "model.16.m.0.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 32,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 62,
+        "out": 17,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.16.m.0.cv3.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 53
+      }
+    },
+    {
+      "name": "model.16.m.0.cv3.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 49,
+        "out": 53,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.17.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 128
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 59
+      }
+    },
+    {
+      "name": "model.17.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 128,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 88,
+        "out": 59,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 256
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 144
+      }
+    },
+    {
+      "name": "model.19.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 384,
+        "out": 256,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 315,
+        "out": 144,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 256
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 144
+      }
+    },
+    {
+      "name": "model.19.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 384,
+        "out": 256,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 216,
+        "out": 144,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.m.0.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 39
+      }
+    },
+    {
+      "name": "model.19.m.0.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 72,
+        "out": 39,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.m.0.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 34
+      }
+    },
+    {
+      "name": "model.19.m.0.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 72,
+        "out": 34,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.m.0.cv3.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 128
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 72
+      }
+    },
+    {
+      "name": "model.19.m.0.cv3.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 128,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 73,
+        "out": 72,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.m.0.m.0.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 32
+      }
+    },
+    {
+      "name": "model.19.m.0.m.0.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 39,
+        "out": 32,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.m.0.m.0.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 39
+      }
+    },
+    {
+      "name": "model.19.m.0.m.0.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 32,
+        "out": 39,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.m.0.m.1.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 35
+      }
+    },
+    {
+      "name": "model.19.m.0.m.1.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 39,
+        "out": 35,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.19.m.0.m.1.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 39
+      }
+    },
+    {
+      "name": "model.19.m.0.m.1.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 35,
+        "out": 39,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.0.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 50
+      }
+    },
+    {
+      "name": "model.20.cv2.0.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 54,
+        "out": 50,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.0.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 46
+      }
+    },
+    {
+      "name": "model.20.cv2.0.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 50,
+        "out": 46,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.0.2",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 46,
+        "out": 64,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.1.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 38
+      }
+    },
+    {
+      "name": "model.20.cv2.1.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 88,
+        "out": 38,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.1.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 31
+      }
+    },
+    {
+      "name": "model.20.cv2.1.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 38,
+        "out": 31,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.1.2",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 31,
+        "out": 64,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.2.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 20
+      }
+    },
+    {
+      "name": "model.20.cv2.2.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 256,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 144,
+        "out": 20,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.2.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 37
+      }
+    },
+    {
+      "name": "model.20.cv2.2.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 20,
+        "out": 37,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv2.2.2",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 37,
+        "out": 64,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.0.0.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 54
+      }
+    },
+    {
+      "name": "model.20.cv3.0.0.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 64
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 54,
+        "out": 54,
+        "groups": 54
+      }
+    },
+    {
+      "name": "model.20.cv3.0.0.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 61
+      }
+    },
+    {
+      "name": "model.20.cv3.0.0.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 54,
+        "out": 61,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.0.1.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 61
+      }
+    },
+    {
+      "name": "model.20.cv3.0.1.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 64
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 61,
+        "out": 61,
+        "groups": 61
+      }
+    },
+    {
+      "name": "model.20.cv3.0.1.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 51
+      }
+    },
+    {
+      "name": "model.20.cv3.0.1.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 61,
+        "out": 51,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.0.2",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 17,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 51,
+        "out": 17,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.1.0.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 128
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 88
+      }
+    },
+    {
+      "name": "model.20.cv3.1.0.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 128,
+        "groups": 128
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 88,
+        "out": 88,
+        "groups": 88
+      }
+    },
+    {
+      "name": "model.20.cv3.1.0.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 48
+      }
+    },
+    {
+      "name": "model.20.cv3.1.0.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 88,
+        "out": 48,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.1.1.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 48
+      }
+    },
+    {
+      "name": "model.20.cv3.1.1.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 64
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 48,
+        "out": 48,
+        "groups": 48
+      }
+    },
+    {
+      "name": "model.20.cv3.1.1.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 40
+      }
+    },
+    {
+      "name": "model.20.cv3.1.1.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 48,
+        "out": 40,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.1.2",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 17,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 40,
+        "out": 17,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.2.0.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 256
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 144
+      }
+    },
+    {
+      "name": "model.20.cv3.2.0.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 256,
+        "out": 256,
+        "groups": 256
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 144,
+        "out": 144,
+        "groups": 144
+      }
+    },
+    {
+      "name": "model.20.cv3.2.0.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 31
+      }
+    },
+    {
+      "name": "model.20.cv3.2.0.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 256,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 144,
+        "out": 31,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.2.1.0.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 31
+      }
+    },
+    {
+      "name": "model.20.cv3.2.1.0.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 64
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 31,
+        "out": 31,
+        "groups": 31
+      }
+    },
+    {
+      "name": "model.20.cv3.2.1.1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 31
+      }
+    },
+    {
+      "name": "model.20.cv3.2.1.1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 31,
+        "out": 31,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.20.cv3.2.2",
+      "before": {
+        "type": "Conv2d",
+        "in": 64,
+        "out": 17,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 31,
+        "out": 17,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.5.cv1.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 64
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 53
+      }
+    },
+    {
+      "name": "model.5.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 64,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 53,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.5.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 128
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 124
+      }
+    },
+    {
+      "name": "model.5.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 256,
+        "out": 128,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 212,
+        "out": 124,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.6.cv1.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 128,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 124,
+        "out": 128,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.6.cv2.bn",
+      "before": {
+        "type": "BN2d",
+        "nf": 128
+      },
+      "after": {
+        "type": "BN2d",
+        "nf": 123
+      }
+    },
+    {
+      "name": "model.6.cv2.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 128,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 123,
+        "groups": 1
+      }
+    },
+    {
+      "name": "model.7.conv",
+      "before": {
+        "type": "Conv2d",
+        "in": 128,
+        "out": 256,
+        "groups": 1
+      },
+      "after": {
+        "type": "Conv2d",
+        "in": 123,
+        "out": 256,
+        "groups": 1
+      }
+    }
+  ]
+}

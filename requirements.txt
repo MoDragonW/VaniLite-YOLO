@@ -1,0 +1,38 @@
+# Core Dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# YOLO Framework
+ultralytics>=8.0.0
+
+# Model Pruning
+torch-pruning>=0.3.0
+
+# System Monitoring
+psutil>=5.9.0
+
+# Data Processing
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+pyyaml>=6.0
+tqdm>=4.65.0
+pandas>=2.0.0
+
+# ONNX Export (optional)
+onnx>=1.14.0
+onnxruntime>=1.15.0
+
+# TensorBoard (optional)
+tensorboard>=2.13.0
+
+# Jupyter (optional)
+jupyter>=1.0.0
+ipykernel>=6.22.0

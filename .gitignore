@@ -1,0 +1,165 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# TensorBoard
+runs/
+logs/
+events.out.tfevents.*
+
+# Data
+datasets/
+data/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+!assets/*.jpg
+!assets/*.png
+
+# Results
+results/
+weights/
+runs/
+wandb/
+
+# Model files (keep trained_models for pre-trained models)
+# trained_models/*.pt
+# trained_models/*.pth
+
+# ONNX
+*.onnx
+# ONNX-Model/
+
+# Cache
+.cache/
+*.cache
+.cache.yaml
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Large files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Documentation
+初稿.pdf
+*.pdf
+
+# Test files
+test_*.py
+*_test.py
+tests/
+
+# Configuration files (keep template)
+# data/renshen.yaml
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Profiling
+*.prof
+*.profile
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Pytype
+.pytype/
+
+# PyCharm
+.idea/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope project
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
