@@ -14,7 +14,7 @@ from typing import List, Tuple, Sequence, Optional
 import inspect
 
 # =========================
-# 0) 强制使用本项目 ultralytics（避免 /root/YOLO 抢占）
+# 0) 
 # =========================
 ROOT = Path(__file__).resolve().parents[1]  # /root/YOLOv12-new
 
@@ -103,8 +103,8 @@ def batch_to_device(batch: dict, device: str) -> dict:
 
 
 # =============================================================================
-# B) 关键：Torch-Pruning 防爆补丁（完全照师兄的做法）
-#    目的：防止 reshape/flatten/split 的 index_mapping 指数级膨胀 -> CPU 内存爆炸 -> Killed
+# B) 关键：Torch-Pruning 防爆补丁
+#    
 # =============================================================================
 def setup_torch_pruning() -> tp:
     import torch_pruning
@@ -159,7 +159,7 @@ def setup_torch_pruning() -> tp:
 
 
 # =============================================================================
-# C) 自定义剪枝器（照师兄脚本做法）
+# C) 自定义剪枝器
 # =============================================================================
 # 让“块”作为根，避免 qkv 等卷积作为根导致依赖爆炸
 ROOT_MODULE_TYPES = [AAttn, vanillanetBlock, activation, nn.Conv2d, nn.Linear]
@@ -371,7 +371,7 @@ def save_yolo_ckpt(model: DetectionModel, save_path: Path, model_yaml: Path, epo
 
 
 # =============================================================================
-# D) ignored layers（照师兄逻辑）
+# D) ignored layers
 # =============================================================================
 def _unwrap_conv(m: nn.Module) -> Optional[nn.Conv2d]:
     if isinstance(m, nn.Conv2d):
@@ -436,7 +436,7 @@ def build_pruner_for_sparse(model: nn.Module, example_inputs: torch.Tensor, reg:
     ignored_layers = get_ignored_layers(model)
 
     # 稀疏化阶段：pruning_ratio=0.0，只用 reg 做 regularize
-    # global_pruning 开不开都行；为保持一致性，这里用 True（和师兄一致）
+    # global_pruning 开不开都行；为保持一致性，这里用 True
     pruner = tp.pruner.BNScalePruner(
         model,
         example_inputs,
