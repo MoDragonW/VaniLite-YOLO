@@ -11,7 +11,7 @@ import torch
 import torch.nn as nn
 
 # =========================
-# 0) 强制使用本项目 ultralytics（避免 /root/YOLO 抢占）
+# 0) 
 # =========================
 ROOT = Path(__file__).resolve().parents[1]  # /root/YOLOv12-new
 sys.path = [p for p in sys.path if not (isinstance(p, str) and p.startswith("/root/YOLO"))]
@@ -37,12 +37,12 @@ from ultralytics.nn.modules.vanillanet import vanillanetBlock, activation
 from ultralytics.nn.modules.block import Attention
 # =============== 可改配置 ===============
 MODEL_YAML = ROOT / "ultralytics/cfg/models/v12/yolo12-vanillanet-SPPF_MixPool.yaml"
-DEFAULT_DUMMY = 64  # DepGraph tracing 输入尺寸（64 最稳）
+DEFAULT_DUMMY = 64  # DepGraph tracing 输入尺寸
 # ======================================
 
 
 # -------------------------
-# Torch-Pruning 防爆补丁（照你师兄逻辑）
+# Torch-Pruning
 # -------------------------
 def setup_torch_pruning():
     import torch_pruning
@@ -94,14 +94,14 @@ def setup_torch_pruning():
 
 
 # -------------------------
-# root_module_types（照你师兄）
+# root_module_types
 # -------------------------
 ROOT_MODULE_TYPES = [AAttn, vanillanetBlock, activation, nn.Conv2d, nn.Linear]
 
 
 # -------------------------
 # 自定义剪枝器：AAttn / vanillanetBlock / activation
-# （照你师兄的逻辑，保证 QKV 1:3 对齐）
+#
 # -------------------------
 def create_aattn_pruner(tp_mod):
     class AAttnPruner(tp_mod.pruner.BasePruningFunc):
@@ -265,7 +265,7 @@ def create_activation_pruner(tp_mod):
 
 
 # -------------------------
-# ignored_layers（照你师兄）：DFL + AAttn.qkv.conv + Detect 最后输出 conv
+# ignored_layers
 # -------------------------
 def _unwrap_conv(m):
     if isinstance(m, nn.Conv2d):
@@ -294,7 +294,7 @@ def _ignore_conv_wrapper_or_conv(ignored, m):
 
 def get_ignored_layers(model: nn.Module):
     ignored = []
-    # ... 你原来的 DFL / AAttn.qkv / Detect last conv 逻辑 ...
+
 
     # 4) 关键：保护 PSA 的 Attention，避免 qkv 输出通道被剪坏导致 view 崩溃
     for m in model.modules():
@@ -305,7 +305,7 @@ def get_ignored_layers(model: nn.Module):
             _ignore_conv_wrapper_or_conv(ignored, m.pe)
             ignored.append(m)  # 也可以把模块本体加入 ignored
 
-    # 去重（很重要，否则 ignored 里会很多重复对象）
+ 
     seen = set()
     uniq = []
     for x in ignored:
@@ -317,7 +317,7 @@ def get_ignored_layers(model: nn.Module):
 
 
 # -------------------------
-# 后处理修复（照你师兄：AAttn / vanillanet / 全局 hook）
+# 后处理修复
 # -------------------------
 def postprocess_global_mismatch(model, example_inputs):
     fixed = [0]
