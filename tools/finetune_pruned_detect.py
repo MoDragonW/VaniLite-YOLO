@@ -11,7 +11,7 @@ from types import SimpleNamespace
 from typing import Dict, Any, Tuple, Optional
 
 # =========================
-# 0) 强制使用本项目 ultralytics（避免 /root/YOLO 抢占）
+# 0) 
 # =========================
 ROOT = Path(__file__).resolve().parents[1]  # /root/YOLOv12-new
 sys.path = [p for p in sys.path if not (isinstance(p, str) and p.startswith("/root/YOLO"))]
@@ -21,7 +21,7 @@ for k in list(sys.modules.keys()):
         del sys.modules[k]
 
 # =========================
-# 1) PyTorch 2.6+：强制 torch.load(weights_only=False)
+# 1)
 # =========================
 import torch
 _orig_load = torch.load
@@ -54,7 +54,7 @@ LR = 5e-4
 WEIGHT_DECAY = 5e-4
 LOG_EVERY = 50
 
-# 是否开启 AMP（手写 loop 安全开，不会触发 Ultralytics AMP check）
+# 是否开启 AMP
 USE_AMP = True
 
 # 每多少个 epoch 做一次评估并打印 mAP
